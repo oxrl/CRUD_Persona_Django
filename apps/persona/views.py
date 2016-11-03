@@ -1,4 +1,4 @@
-from django.views.generic import ListView, CreateView
+from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from django.http import HttpResponse,HttpResponseRedirect
 from django.core.urlresolvers import reverse_lazy
 from apps.persona.models import Persona
@@ -24,3 +24,14 @@ class PersonaCreate(CreateView):
             return HttpResponseRedirect(self.get_success_url())
         else:
             return self.render_to_response(self.get_context_data(form=form))
+
+class PersonaEditar(UpdateView):
+    model = Persona
+    form_class= PersonaForm
+    template_name='persona/persona_create.html'
+    success_url = reverse_lazy('persona:Persona-list')
+
+class PersonaEliminar(DeleteView):
+    model = Persona
+    template_name = 'persona/persona_delete.html'
+    success_url = reverse_lazy('persona:Persona-list')
