@@ -1,0 +1,50 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<form method="post">
+	{% csrf_token %}
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+			<div class="form-group">
+				<label for="{{form.nombre.name}}">{{form.nombre.label}}</label>
+				{{form.nombre}}
+			</div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+            <div class="form-group">
+				<label for="{{form.apellidos.name}}">{{form.apellidos.label}}</label>
+				{{form.apellidos}}
+			</div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+            <div class="form-group">
+				<label for="{{form.edad.name}}">{{form.edad.label}}</label>
+				{{form.edad}}
+			</div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+            <div class="form-group">
+				<label for="{{form.telefono.name}}">{{form.telefono.label}}</label>
+				{{form.telefono}}
+			</div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+            <div class="form-group">
+				<label for="{{form.email.name}}">{{form.email.label}}</label>
+				{{form.email}}
+			</div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+            <div class="form-group">
+				<label for="{{form.domicilio.name}}">{{form.domicilio.label}}</label>
+				{{form.domicilio}}
+			</div>
+		</div>
+        <div class="col-md-8 col-md-offset-2">
+			<div class="form-group">
+				<button class="btn btn-primary" type="submit">Registrar</button>
+			</div>
+		</div>
+    </div>
+</form>
+{% endblock %}
